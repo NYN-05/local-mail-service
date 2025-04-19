@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="card mx-auto w-75 shadow-lg">
+        <div class="card-body">
+            <h2 class="card-title text-center" style="color: var(--primary);">Compose Mail</h2>
+            <form method="post">
+                <div class="mb-3">
+                    <label for="to" class="form-label" style="color: var(--text);">To</label>
+                    <input type="email" class="form-control" id="to" name="to" required>
+                </div>
+                <div class="mb-3">
+                    <label for="subject" class="form-label" style="color: var(--text);">Subject</label>
+                    <input type="text" class="form-control" id="subject" name="subject" required>
+                </div>
+                <div class="mb-3">
+                    <label for="body" class="form-label" style="color: var(--text);">Message</label>
+                    <textarea class="form-control" id="body" name="body" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Send</button>
+            </form>
+        </div>
+    </div>
+    <style>
+        .form-control, .form-control:focus {
+            background: var(--card-bg);
+            color: var(--text);
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        [data-theme="dark"] .form-control {
+            border: 1px solid #4b5563;
+        }
+        [data-theme="dark"] .form-control:focus {
+            box-shadow: 0 0 0 0.2rem rgba(45, 212, 191, 0.25);
+        }
+    </style>
+{% endblock %}

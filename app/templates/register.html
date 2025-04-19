@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="card mx-auto w-50 shadow-lg">
+        <div class="card-body">
+            <h2 class="card-title text-center" style="color: var(--primary);">Register</h2>
+            <form method="post">
+                <div class="mb-3">
+                    <label for="email" class="form-label" style="color: var(--text);">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label" style="color: var(--text);">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Register</button>
+            </form>
+            <p class="text-center mt-3" style="color: var(--text-muted);">Already have an account? <a href="{{ url_for('auth.login') }}" style="color: var(--primary);">Login here</a></p>
+        </div>
+    </div>
+    <style>
+        .form-control, .form-control:focus {
+            background: var(--card-bg);
+            color: var(--text);
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        [data-theme="dark"] .form-control {
+            border: 1px solid #4b5563;
+        }
+        [data-theme="dark"] .form-control:focus {
+            box-shadow: 0 0 0 0.2rem rgba(45, 212, 191, 0.25);
+        }
+        a:hover {
+            color: #0b8276 !important;
+        }
+        [data-theme="dark"] a:hover {
+            color: #26b8a6 !important;
+        }
+    </style>
+{% endblock %}
